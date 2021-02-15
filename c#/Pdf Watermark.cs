@@ -1,4 +1,19 @@
-    public bool add(string sourcePath,string waterMark,string fontFamily,int fontSize,string fontColor)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
+using PdfSharp.Drawing;
+using System.IO;
+
+namespace DocumentConvertor
+{
+    public class WaterMark
+    {
+
+
+        public bool add(string sourcePath,string waterMark,string fontFamily,int fontSize,string fontColor)
         {
             bool result = true;
             string[] files = Directory.GetFiles(sourcePath, "*.*", SearchOption.TopDirectoryOnly).Where(s => s.ToLower().EndsWith(".pdf")).ToArray();
@@ -48,3 +63,5 @@
             }
             return result;
         }
+    }
+}
